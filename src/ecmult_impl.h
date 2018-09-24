@@ -266,7 +266,7 @@ static int secp256k1_ecmult_wnaf(int *wnaf, int len, const secp256k1_scalar_t *a
     return last_set_bit + 1;
 }
 
-static void secp256k1_ecmult(const secp256k1_ecmult_context_t *ctx, secp256k1_gej_t *r, const secp256k1_gej_t *a, const secp256k1_scalar_t *na, const secp256k1_scalar_t *ng) {
+void secp256k1_ecmult(const secp256k1_ecmult_context_t *ctx, secp256k1_gej_t *r, const secp256k1_gej_t *a, const secp256k1_scalar_t *na, const secp256k1_scalar_t *ng) {
     secp256k1_ge_t pre_a[ECMULT_TABLE_SIZE(WINDOW_A)];
     secp256k1_ge_t tmpa;
     secp256k1_fe_t Z;
